@@ -10,7 +10,7 @@ const Home = () => {
     </Head>
     <header className={styles.header}>
       <h1>Hylog</h1>
-      <Image src="/profile.png" alt="Profile image of hylog" width={100} height={100} />
+      <Image src="/profile.png" alt="Profile image of hylog" width={180} height={180} />
       <p>배운 내용을 아는 만큼 기록합니다<br />
       새롭게 배운 내용을 계속해서 추가합니다
       </p>
@@ -19,8 +19,21 @@ const Home = () => {
       <article>
         Post1
       </article>
+
     </main>
-    <footer></footer>
+    <footer className={styles.footer}>
+      <div>
+        <a target="_blank" rel="noopener noreferrer" href="mailto:yong2401@gmail.com">
+          <i className="ic-mail4" aria-label="이메일주소"></i>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/YounglanHong">
+          <i className="ic-github" aria-label="깃헙주소"></i>
+        </a>
+      </div>
+      <p>
+        <small>Copyright &copy; {new Date().getFullYear()} YounglanHong. All rights reserved</small>
+      </p>
+    </footer>
     </div>
   )
 }
