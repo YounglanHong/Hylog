@@ -1,8 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.scss";
+import { GetStaticProps } from "next";
 
-const Home = () => {
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  date: string;
+}
+
+const Home = ({ posts }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,7 +32,18 @@ const Home = () => {
         </p>
       </header>
       <main>
-        <article>Post1</article>
+        {posts.map((post: Post, idx: number) => {
+          return (
+            <article key={post.id}>
+              <Link href={`/post/${post.slug}`}>
+                <a>{post.title}</a>
+              </Link>
+              <p>
+                <time dateTime={post.date}>{post.date}</time>
+              </p>
+            </article>
+          );
+        })}
       </main>
       <footer className={styles.footer}>
         <div>
@@ -51,6 +71,31 @@ const Home = () => {
       </footer>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const fs = require("fs");
+  const matter = require("gray-matter");
+  const { v4: uuid } = require("uuid");
+
+  const files = fs.readdirSync(`${process.cwd()}/_posts`, "utf-8");
+
+  const posts = files
+    .filter((fn: string) => fn.endsWith(".md"))
+    .map((fn: string) => {
+      const path = `${process.cwd()}/_posts/${fn}`;
+      const rawContent = fs.readFileSync(path, {
+        encoding: "utf-8",
+      });
+
+      const { data } = matter(rawContent);
+
+      return { ...data, id: uuid() };
+    });
+
+  return {
+    props: { posts },
+  };
 };
 
 export default Home;
