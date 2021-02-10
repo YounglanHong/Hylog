@@ -9,6 +9,7 @@ interface Post {
   title: string;
   slug: string;
   date: string;
+  description: string;
 }
 
 const Home = ({ posts }) => {
@@ -31,16 +32,17 @@ const Home = ({ posts }) => {
           새롭게 배운 내용을 계속해서 추가합니다
         </p>
       </header>
-      <main>
+      <main className={styles.posts}>
         {posts.map((post: Post, idx: number) => {
           return (
             <article key={post.id}>
               <Link href={`/posts/${post.slug}`}>
-                <a>{post.title}</a>
+                <a className={styles.title}>{post.title}</a>
               </Link>
               <p>
                 <time dateTime={post.date}>{post.date}</time>
               </p>
+              <p>{post.description}</p>
             </article>
           );
         })}
