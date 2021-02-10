@@ -21,6 +21,18 @@ $ npm run dev
 $ npm run build
 ```
 
+## Frontmatter
+
+Go to `_posts` directory
+
+```js
+---
+title: Post Title
+slug: post-slug
+date: "00-00-2021"
+---
+```
+
 ## Author
 
 - [github/YounglanHong](https://github.com/YounglanHong)
