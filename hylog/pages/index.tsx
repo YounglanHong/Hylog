@@ -35,7 +35,7 @@ const Home = ({ posts }) => {
         {posts.map((post: Post, idx: number) => {
           return (
             <article key={post.id}>
-              <Link href={`/post/${post.slug}`}>
+              <Link href={`/posts/${post.slug}`}>
                 <a>{post.title}</a>
               </Link>
               <p>
