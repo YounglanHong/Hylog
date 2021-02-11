@@ -1,14 +1,31 @@
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../../styles/Post.module.scss";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 const Post = ({ post }) => {
   // console.log(post);
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>
-        <time dateTime={post.date}>{post.date}</time>
-      </p>
-      <section dangerouslySetInnerHTML={{ __html: post.content }}></section>
+    <div className="container">
+      <Head>
+        <title>Hylog | {post.title}</title>
+      </Head>
+      <header className={styles.header}>
+        <h1>
+          <Link href={`/`}>
+            <a href="">Hylog</a>
+          </Link>
+        </h1>
+      </header>
+      <div className={styles.article}>
+        <h1 className={styles.title}>{post.title}</h1>
+        <p>
+          <time dateTime={post.date} className={styles.date}>
+            {post.date}
+          </time>
+        </p>
+        <section dangerouslySetInnerHTML={{ __html: post.content }}></section>
+      </div>
     </div>
   );
 };
