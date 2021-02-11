@@ -14,7 +14,7 @@ interface Post {
 
 const Home = ({ posts }) => {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>Hylog</title>
       </Head>
@@ -32,17 +32,19 @@ const Home = ({ posts }) => {
           새롭게 배운 내용을 계속해서 추가합니다
         </p>
       </header>
-      <main className={styles.posts}>
+      <main>
         {posts.map((post: Post, idx: number) => {
           return (
-            <article key={post.id}>
+            <article key={post.id} className={styles.posts}>
               <Link href={`/posts/${post.slug}`}>
                 <a className={styles.title}>{post.title}</a>
               </Link>
               <p>
-                <time dateTime={post.date}>{post.date}</time>
+                <time dateTime={post.date} className={styles.date}>
+                  {post.date}
+                </time>
               </p>
-              <p>{post.description}</p>
+              <p className={styles.desc}>{post.description}</p>
             </article>
           );
         })}
