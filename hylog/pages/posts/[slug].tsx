@@ -9,6 +9,13 @@ const Post = ({ post }) => {
     <div className="container">
       <Head>
         <title>Hylog | {post.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Head>
+        <meta
+          name="description"
+          content={post.description ? post.description : "post description"}
+        />
       </Head>
       <header className={styles.header}>
         <h1>

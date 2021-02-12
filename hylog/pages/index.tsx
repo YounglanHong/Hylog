@@ -17,6 +17,12 @@ const Home = ({ posts }) => {
     <div className="container">
       <Head>
         <title>Hylog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content="Hylog" key="title" />
+        <meta
+          property="og:image"
+          content="https://hylog.vercel.app/_next/image?url=%2Fprofile.png&w=384&q=75"
+        />
       </Head>
       <header className={styles.header}>
         <h1>Hylog</h1>
