@@ -1,5 +1,5 @@
 ---
-title: 하드디스크와 메모리(RAM) 비교
+title: 하드디스크와 메모리(RAM)의 비교
 slug: hdd-ram
 date: "2021-06-04"
 description: Hard disk, Memory(RAM)
