@@ -1,6 +1,6 @@
 ---
 title: DFS/ BFS 이해하기
-slug: graph-search-dfs-bfs
+slug: dfs-bfs
 date: "2021-06-02"
 description: Introducing Graph search algorithm DFS, BFS.
 ---

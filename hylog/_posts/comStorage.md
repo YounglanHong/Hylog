@@ -1,6 +1,6 @@
 ---
 title: 컴퓨터의 저장장치 - 하드디스크, 메모리(RAM)
-slug: computer-storage-hdd-ram
+slug: hdd-ram
 date: "2021-06-04"
 description: Computer Storage - Hard disk, Memory(RAM)
 ---
