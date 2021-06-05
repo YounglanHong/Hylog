@@ -1,8 +1,8 @@
 ---
-title: 컴퓨터의 저장장치: 하드디스크, 메모리(RAM)
-slug: HDD-RAM
+title: 하드디스크와 메모리(RAM) 비교
+slug: hdd-ram
 date: "2021-06-04"
-description: Computer Storage: Hard disk, Memory(RAM)
+description: Hard disk, Memory(RAM)
 ---
 
 ### 🔑컴퓨터의 저장장치 중 하드디스크와 메모리(RAM)에 대한 포스팅입니다.
