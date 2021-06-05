@@ -29,7 +29,7 @@ Go to `_posts` directory
 ---
 title: Post Title
 slug: post-slug
-date: "00-00-2021"
+date: "2021-01-01"
 description: Lorem ipsum dolor sit amet
 ---
 
