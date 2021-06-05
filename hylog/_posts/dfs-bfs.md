@@ -12,10 +12,10 @@ description: Introducing Graph search algorithm DFS, BFS.
 > - **그래프(Graph)** 는 정점(`vertex`, 노드)과 간선(`edge`)로 구성된 유한한(finite) 자료구조 입니다.
 > - 두 정점(노드)가 간선으로 연결되면 '두 노드는 인접(Adjacent)하다' 라고 합니다.
 >
-> ![Graph](../assets/images/Graph.png)
+> ![Graph](/images/Graph.png)
 >
 > - 페이스북, 인스타그램 같은 소셜 네트워크의 데이터베이스가 그래프 구조로 만들어져 있습니다. 그래프 구조를 통해 **사람들(`node`) 사이의 관계(`edge`)** 를 쉽게 탐색할 수 있습니다.
->   ![Graph - Social Network](../assets/images/Graph_social-network.png)
+>   ![Graph - Social Network](images/Graph_social-network.png)
 
 ## 그래프 탐색
 
@@ -27,11 +27,11 @@ description: Introducing Graph search algorithm DFS, BFS.
 
   - 시작 노드에서 최대한 **멀리 있는 노드** 를 우선 탐색합니다.
 
-    ![Depth-First-Search](../assets/images/DFS.gif)
+    ![Depth-First-Search](images/DFS.gif)
 
   - DFS를 활용하여 **미로찾기** 문제를 해결할 수 있습니다. 미로 속의 길을 간선(`edge`)으로, 막다른 지점을 정점(`node`)으로 보고 미로의 도착점에 도달할 때까지 각 경로의 최대 깊이까지 탐색합니다. 현재 선택한 경로가 막다른 골목에 부딪히면 되돌아가서(백트래킹) 다른 경로를 탐색합니다.
 
-    ![maze - DFS](../assets/images/maze.gif)
+    ![maze - DFS](/images/maze.gif)
 
 - **스택**과 **재귀함수**를 이용하여 구현할 수 있습니다.
 
@@ -104,11 +104,11 @@ description: Introducing Graph search algorithm DFS, BFS.
 
   - 시작 노드에서 최대한 **가까운 노드(이웃 노드)** 부터 우선 탐색합니다.
 
-    ![Breadth-First-Search](../assets/images/BFS.gif)
+    ![Breadth-First-Search](/images/BFS.gif)
 
   - BFS는 **P2P 파일 네트워크**에서 피어(peer) 노드를 탐색할 때 활용할 수 있습니다. BFS를 활용해 가장 가까운 이웃 노드만 빠르게 탐색할 수 있습니다.
 
-    ![P2P - BFS](../assets/images/p2p.png)
+    ![P2P - BFS](/images/p2p.png)
 
 - **큐**를 이용하여 구현할 수 있습니다.
 
