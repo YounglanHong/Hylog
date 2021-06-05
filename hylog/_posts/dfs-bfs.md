@@ -16,6 +16,8 @@ description: Introducing Graph search algorithm DFS, BFS.
 >
 > - 페이스북, 인스타그램 같은 소셜 네트워크의 데이터베이스가 그래프 구조로 만들어져 있습니다. 그래프 구조를 통해 **사람들(`node`) 사이의 관계(`edge`)** 를 쉽게 탐색할 수 있습니다.
 >   ![Graph - Social Network](https://d1.awsstatic.com/diagrams/foaf-graph.e5e42865e0ee97a2972f9014d28f525ef68a981b.png)
+>
+>   - 페이스북, 인스타그램 같은 소셜 네트워크의 데이터베이스가 그래프 구조로 만들어져 있습니다. 그래프 구조를 통해 **사람들(`node`) 사이의 관계(`edge`)** 를 쉽게 탐색할 수 있습니다.
 
 ## 그래프 탐색
 
@@ -27,12 +29,14 @@ description: Introducing Graph search algorithm DFS, BFS.
 
   - 시작 노드에서 최대한 **멀리 있는 노드** 를 우선 탐색합니다.
 
-    ![Depth-First-Search](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)
-    _[Depth-First Search](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)_
+![Depth-First-Search](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)
+_[Depth-First Search](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)_
 
-  - DFS를 활용하여 **미로찾기** 문제를 해결할 수 있습니다. 미로 속의 길을 간선(`edge`)으로, 막다른 지점을 정점(`node`)으로 보고 미로의 도착점에 도달할 때까지 각 경로의 최대 깊이까지 탐색합니다. 현재 선택한 경로가 막다른 골목에 부딪히면 되돌아가서(백트래킹) 다른 경로를 탐색합니다.
+- DFS를 활용하여 **미로찾기** 문제를 해결할 수 있습니다. 미로 속의 길을 간선(`edge`)으로, 막다른 지점을 정점(`node`)으로 보고 미로의 도착점에 도달할 때까지 각 경로의 최대 깊이까지 탐색합니다. 현재 선택한 경로가 막다른 골목에 부딪히면 되돌아가서(백트래킹) 다른 경로를 탐색합니다.
 
-    ![maze - DFS](https://d18l82el6cdm1i.cloudfront.net/uploads/mf7THWHAbL-mazegif.gif)
+  ![maze - DFS](https://d18l82el6cdm1i.cloudfront.net/uploads/mf7THWHAbL-mazegif.gif)
+
+- DFS를 활용하여 **미로찾기** 문제를 해결할 수 있습니다. 미로 속의 길을 간선(`edge`)으로, 막다른 지점을 정점(`node`)으로 보고 미로의 도착점에 도달할 때까지 각 경로의 최대 깊이까지 탐색합니다. 현재 선택한 경로가 막다른 골목에 부딪히면 되돌아가서(백트래킹) 다른 경로를 탐색합니다.
 
 - **스택**과 **재귀함수**를 이용하여 구현할 수 있습니다.
 
