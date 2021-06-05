@@ -29,8 +29,11 @@ Go to `_posts` directory
 ---
 title: Post Title
 slug: post-slug
-date: "00-00-2021"
+date: "2021-01-01"
+description: Lorem ipsum dolor sit amet
 ---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 ```
 
 ## Author
