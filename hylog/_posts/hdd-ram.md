@@ -13,7 +13,8 @@ description: Hard disk, Memory(RAM)
 
 ## 1. 하드 디스크(Hard Disk, Hard Drive, HDD)
 
-![HDD](../assets/images/HDD.jpeg)
+![HDD](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1920px-Laptop-hard-drive-exposed.jpg)
+_[hard drive](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1920px-Laptop-hard-drive-exposed.jpg)_
 
 - 컴퓨너의 `보조기억장치`로 데이터 접근 속도가 비교적 느립니다.
 
@@ -22,7 +23,8 @@ description: Hard disk, Memory(RAM)
 
 ## 2. 메모리(Random Access Memory, RAM)
 
-![RAM](../assets/images/RAM.jpeg)
+![RAM](https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg)
+_[RAM](https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg)_
 
 - 컴퓨터의 `주기억장치`로 데이터 접근 속도가 HDD보다 빨라 성능이 좋습니다.
 
@@ -33,7 +35,7 @@ description: Hard disk, Memory(RAM)
 > - 텍스트 편집기로 작성 중인 글은 RAM에 올려져 있습니다. 텍스트 편집기 창을 닫을 때
 >   - '저장 안함'을 선택하면 하드 디스크에 저장되지 않고 프로그램이 종료됩니다. '저장'하면 작성하던 글이 하드디스크에 저장됩니다.
 >
-> ![save](../assets/images/save.png)
+> ![save](https://github.com/YounglanHong/Hylog/blob/master/hylog/public/images/save.png?raw=true)
 
 > ✅ RAM이 하드디스크보다 비싼 이유는?
 >
@@ -42,20 +44,26 @@ description: Hard disk, Memory(RAM)
 >   - RAM 크기는 보통 `4 ~ 32GB`, 반면 하드디스크는 `1 ~ 3TB`
 >   - 처리 속도는 CPU > 레지스터 > 캐시 > 메모리(RAM) > 하드디스크 순서로 빠릅니다.
 >
-> ![Memory Hierarchy](../assets/images/memory-hierarchy.png)
+> ![Memory Hierarchy](https://upload.wikimedia.org/wikipedia/commons/c/c6/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0%EA%B7%B8%EB%A6%BC1.png) > _[메모리 계층구조](https://upload.wikimedia.org/wikipedia/commons/c/c6/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0%EA%B7%B8%EB%A6%BC1.png)_
 
 ## 💡정리
+
+- 용도에 따라 RAM은 **주기억장치**, 하드디스크는 **보조기억장치**로 분류합니다.
+
+- RAM은 **휘발성 메모리**, 하드디스크는 **비 휘발성 메모리**입니다.
+
+<!-- ## 💡정리
 
 | 특징   |                  | 예시                           |
 | ------ | ---------------- | ------------------------------ |
 | 용도   | 주기억장치       | RAM, ROM                       |
 |        | 보조기억장치     | HDD(하드디스크), SSD, DVD, USB |
 | 휘발성 | 휘발성 메모리    | RAM                            |
-|        | 비 휘발성 메모리 | HDD, SSD, ROM                  |
+|        | 비 휘발성 메모리 | HDD, SSD, ROM                  | -->
 
 ---
 
-### Reference
+### 🔗Reference
 
 [Hard Drive vs. RAM](https://www.educba.com/hard-drive-vs-ram/)
 
