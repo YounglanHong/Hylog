@@ -5,16 +5,16 @@ date: "2021-06-04"
 description: Hard disk, Memory(RAM)
 ---
 
-### 🔑컴퓨터의 저장장치 중 하드디스크와 메모리(RAM)에 대한 포스팅입니다.
-
 > ### `저장장치(Storage)`는 데이터를 일시적 또는 긴 기간 저장하기 위해 사용하는 장치
 >
-> - 컴퓨터는 다양한 저장장치를 사용하여 _효율적으로_ 작업을 처리합니다.
+> - 컴퓨터는 다양한 저장장치를 사용하여 **효율적으로** 작업을 처리합니다.
 
 ## 1. 하드 디스크(Hard Disk, Hard Drive, HDD)
 
-![HDD](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1920px-Laptop-hard-drive-exposed.jpg)
-_[hard drive](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1920px-Laptop-hard-drive-exposed.jpg)_
+<figure align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-hard-drive-exposed.jpg/1920px-Laptop-hard-drive-exposed.jpg" alt="hard disk" width="250" height="200" />
+<figcaption className="cap">Hard disk (wikipedia)</figcaption>
+</figure>
 
 - 컴퓨너의 `보조기억장치`로 데이터 접근 속도가 비교적 느립니다.
 
@@ -23,8 +23,10 @@ _[hard drive](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop-h
 
 ## 2. 메모리(Random Access Memory, RAM)
 
-![RAM](https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg)
-_[RAM](https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg)_
+<figure align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg" alt="random access memory" width="250" height="250" />
+<figcaption className="cap">RAM (wikipedia)</figcaption>
+</figure>
 
 - 컴퓨터의 `주기억장치`로 데이터 접근 속도가 HDD보다 빨라 성능이 좋습니다.
 
@@ -35,7 +37,9 @@ _[RAM](https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg)_
 > - 텍스트 편집기로 작성 중인 글은 RAM에 올려져 있습니다. 텍스트 편집기 창을 닫을 때
 >   - '저장 안함'을 선택하면 하드 디스크에 저장되지 않고 프로그램이 종료됩니다. '저장'하면 작성하던 글이 하드디스크에 저장됩니다.
 >
-> ![save](https://github.com/YounglanHong/Hylog/blob/master/hylog/public/images/save.png?raw=true)
+> <figure align="center">
+>  <img src="https://github.com/YounglanHong/Hylog/blob/master/hylog/public/images/save.png?raw=true" alt="save example" width="280" height="200" />
+> </figure>
 
 > ✅ RAM이 하드디스크보다 비싼 이유는?
 >
@@ -43,8 +47,11 @@ _[RAM](https://upload.wikimedia.org/wikipedia/commons/d/d3/RAM_n.jpg)_
 > - RAM은 **속도**를 높이는 데 사용되고 하드 디스크는 **저장 공간**을 늘리는 데 사용됩니다.
 >   - RAM 크기는 보통 `4 ~ 32GB`, 반면 하드디스크는 `1 ~ 3TB`
 >   - 처리 속도는 CPU > 레지스터 > 캐시 > 메모리(RAM) > 하드디스크 순서로 빠릅니다.
->
-> ![Memory Hierarchy](https://upload.wikimedia.org/wikipedia/commons/c/c6/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0%EA%B7%B8%EB%A6%BC1.png) > _[메모리 계층구조](https://upload.wikimedia.org/wikipedia/commons/c/c6/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0%EA%B7%B8%EB%A6%BC1.png)_
+>   <figure align="center">
+>   <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B3%84%EC%B8%B5%EA%B5%AC%EC%A1%B0%EA%B7%B8%EB%A6%BC1.png" alt="memory hierarchy" width="250" height="200" />
+>   <figcaption className="cap">메모리 계층구조 (wikipedia)
+>   </figcaption>
+>   </figure>
 
 ## 💡정리
 
