@@ -1,5 +1,8 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import "./constants/font-size";
 @import "./constants/colors";
+@import "./constants/breakpoint";
+@import "./mixins/mixin";
 
 .header {
   margin: 3vh 0;
@@ -13,10 +16,10 @@
 
 .article {
   margin: 7vh 0;
-  width: calc(100% - 30em);
+  width: calc(100% - 30%);
 
   .title {
-    font-size: 3.5em;
+    font-size: #{$font-post-title};
     color: #{$gray-800};
   }
 
@@ -25,9 +28,9 @@
   }
 
   section {
-    margin: 3em 0;
+    margin: 3rem 0;
     font-family: "Spoqa Han Sans Neo", "sans-serif";
-    font-size: 1em;
+    font-size: #{$font-md};
     word-break: break-all;
     line-height: 180%;
     color: #{$gray-800};
@@ -55,7 +58,7 @@
     }
 
     figcaption {
-      font-size: 0.8em;
+      font-size: #{$font-sm};
       color: #{$gray-500};
     }
     blockquote {
@@ -68,7 +71,19 @@
     pre {
       width: 90%;
       border-radius: 0.3em;
-      font-size: 0.8em;
+      font-size: #{$font-sm};
     }
+  }
+}
+
+@include tablet {
+  .article {
+    width: calc(100% - 15%);
+  }
+}
+
+@include mobile {
+  .article {
+    width: calc(100% - 7%);
   }
 }
