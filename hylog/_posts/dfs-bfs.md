@@ -5,25 +5,29 @@ date: "2021-06-02"
 description: Introducing Graph search algorithm DFS, BFS.
 ---
 
-### 🔑대표적 그래프(Graph) 탐색 알고리즘인 DFS/BFS를 소개합니다.
+🔑 대표적 그래프(Graph) 탐색 알고리즘인 DFS/BFS를 소개합니다.
 
-> ## 그래프(Graph)는 뭘까?
->
-> - **그래프(Graph)** 는 정점(`vertex`, 노드)과 간선(`edge`)로 구성된 유한한(finite) 자료구조 입니다.
-> - 두 정점(노드)가 간선으로 연결되면 '두 노드는 인접(Adjacent)하다' 라고 합니다.
->
-> <figure align="center">
->  <img src="https://github.com/YounglanHong/Hylog/blob/master/hylog/public/Graph.png?raw=true" alt="graph" width="300" height="200" />
-> <figcaption className="cap">graph</figcaption>
-> </figure>
->
-> - 페이스북, 인스타그램 같은 소셜 네트워크의 데이터베이스가 그래프 구조로 만들어져 있습니다. 그래프 구조를 통해 **사람들(`node`) 사이의 관계(`edge`)** 를 쉽게 탐색할 수 있습니다.
->
-> <figure align="center">
-> <img src="https://d1.awsstatic.com/diagrams/foaf-graph.e5e42865e0ee97a2972f9014d28f525ef68a981b.png" alt="graph example" width="300" height="230" />
-> <figcaption className="cap">social network (AWS)
-> </figcaption>
-> </figure>
+---
+
+## 그래프(Graph)는 뭘까?
+
+- **그래프(Graph)** 는 정점(`vertex`, 노드)과 간선(`edge`)로 구성된 유한한(finite) 자료구조 입니다.
+- 두 정점(노드)가 간선으로 연결되면 '두 노드는 인접(Adjacent)하다' 라고 합니다.
+
+<figure align="center">
+<img src="https://github.com/YounglanHong/Hylog/blob/master/hylog/public/Graph.png?raw=true" alt="graph" width="300" height="200" />
+<figcaption className="cap">graph</figcaption>
+</figure>
+
+- 페이스북, 인스타그램 같은 소셜 네트워크의 데이터베이스가 그래프 구조로 만들어져 있습니다. 그래프 구조를 통해 **사람들(`node`) 사이의 관계(`edge`)** 를 쉽게 탐색할 수 있습니다.
+
+<figure align="center">
+<img src="https://d1.awsstatic.com/diagrams/foaf-graph.e5e42865e0ee97a2972f9014d28f525ef68a981b.png" alt="graph example" width="300" height="230" />
+<figcaption className="cap">social network (AWS)
+</figcaption>
+</figure>
+
+---
 
 ## 그래프 탐색
 
@@ -197,13 +201,12 @@ description: Introducing Graph search algorithm DFS, BFS.
     graph.BFS("A"); //   ["A", "B", "C", "D", "E", "F"]
     ```
 
-  ## ※ Big-O
+---
 
-  - 시간 복잡도는 두 탐색 알고리즘 모두 `O(N)` (N: 그래프 노드의 개수) 입니다.
+### ※ Big-O
 
-  - 공간 복잡도는 DFS보다 BFS 상대적으로 큽니다.(더 많은 메모리 차지)
-
-  ## 💡정리
+- 시간 복잡도는 두 탐색 알고리즘 모두 `O(N)` (N: 그래프 노드의 개수) 입니다.
+- 공간 복잡도는 DFS보다 BFS 상대적으로 큽니다.(더 많은 메모리 차지)
 
   <!-- | 항목     | DFS        | BFS      |
   | -------- | ---------- | -------- |
@@ -213,11 +216,15 @@ description: Introducing Graph search algorithm DFS, BFS.
   | 무한루프 | ⭕️        | ❌       |
   | 특징     | 백트래킹   | 최적화   | -->
 
-  - **DFS** 는 그래프의 **깊이**를 우선으로 탐색하고, **스택**과 **재귀**를 통해 구현할 수 있습니다. (무한루프 가능성⭕️, 백트래킹)
-  - **BFS** 는 그래프의 **넓이**를 우선으로 탐색하고, **큐**를 통해 구현할 수 있습니다. (최적화 ⭕️)
+<blockquote>
+<h2>💡정리</h2>
 
-  - **BFS**는 탐색해야 할 그래프의 깊이가 노드마다 다르거나 단일 대답이 필요한 경우(최단 경로 구하기 등)에 유리합니다.
-  - 그래프의 모든 노드를 탐색해야 한다면 **DFS**가 더 좋은 방법일 수 있습니다.
+- **DFS**는 그래프의 **깊이**를 우선으로 탐색하고, **스택**과 **재귀**를 통해 구현할 수 있습니다.(백트래킹)
+- **BFS**는 그래프의 **넓이**를 우선으로 탐색하고, **큐**를 통해 구현할 수 있습니다. (최적해)
+
+- **BFS**는 탐색해야 할 그래프의 깊이가 노드마다 다르거나 단일 대답이 필요한 경우((예)최단 경로 구하기 등)에 유리합니다.
+- 그래프의 모든 노드를 탐색해야 한다면 **DFS**가 더 좋은 방법일 수 있습니다.
+</blockquote>
 
 ---
 
