@@ -2,7 +2,7 @@
 title: 하드디스크와 메모리(RAM) 비교
 slug: hdd-ram
 date: "2021-06-04"
-description: Hard disk, Memory(RAM)
+description: Hard disk and Memory(RAM)
 ---
 
 ### `저장장치(Storage)`는 데이터를 일시적 또는 긴 기간 저장하기 위해 사용하는 장치
@@ -59,7 +59,7 @@ description: Hard disk, Memory(RAM)
   </figure>
   </blockquote>
 
-<blockquote>
+<blockquote className="summary">
 <h2>💡정리</h2>
 
 - 용도에 따라 RAM은 **주기억장치**, 하드디스크는 **보조기억장치**로 분류합니다.
@@ -74,8 +74,6 @@ description: Hard disk, Memory(RAM)
 |        | 보조기억장치     | HDD(하드디스크), SSD, DVD, USB |
 | 휘발성 | 휘발성 메모리    | RAM                            |
 |        | 비 휘발성 메모리 | HDD, SSD, ROM                  | -->
-
----
 
 ### 🔗Reference
 

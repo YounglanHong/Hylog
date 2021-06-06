@@ -28,6 +28,7 @@
     margin: 3em 0;
     font-family: "Spoqa Han Sans Neo", "sans-serif";
     font-size: 1em;
+    word-break: break-all;
     line-height: 180%;
     color: #{$gray-800};
 
@@ -62,6 +63,12 @@
       border-radius: 1.3em;
       background: #f3f4f6;
       box-shadow: 20px 20px 60px #cfcfd1, -20px -20px 60px #ffffff;
+    }
+
+    pre {
+      width: 90%;
+      border-radius: 0.3em;
+      font-size: 0.8em;
     }
   }
 }

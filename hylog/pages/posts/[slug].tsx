@@ -2,9 +2,14 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Post.module.scss";
 import { GetStaticProps, GetStaticPaths } from "next";
+import { useEffect } from "react";
+const prism = require("prismjs");
 
 const Post = ({ post }) => {
   // console.log(post);
+  useEffect(() => {
+    prism.highlightAll();
+  }, []);
   return (
     <div className="container">
       <Head>
@@ -41,7 +46,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // console.log("context", context);
   const fs = require("fs");
   const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
+  // const highlight = require("remark-highlight.js");
   const unified = require("unified");
   const markdown = require("remark-parse");
   const matter = require("gray-matter");
@@ -56,9 +61,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { data, content } = matter(rawContent);
 
   const result = await unified()
-    .use(markdown)
-    .use(highlight)
     .use(html)
+    .use(markdown)
+    // .use(highlight)
     .process(content);
 
   return {
