@@ -1,3 +1,4 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import "./constants/colors";
 
 .header {
@@ -12,7 +13,7 @@
 
 .article {
   margin: 7vh 0;
-  width: calc(100% - 20em);
+  width: calc(100% - 30em);
 
   .title {
     font-size: 3.5em;
@@ -25,11 +26,42 @@
 
   section {
     margin: 3em 0;
-    font-size: 1.2em;
-  }
-}
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-size: 1em;
+    line-height: 180%;
+    color: #{$gray-800};
 
-// image figure
-.cap {
-  color: #{$gray-600};
+    h1,
+    h2,
+    h3,
+    ul {
+      margin: 1.5em 0;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: #{$blue-600};
+      }
+    }
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      color: #{$gray-500};
+    }
+    blockquote {
+      padding: 1em 3em;
+      border-radius: 1.3em;
+      background: #f3f4f6;
+      box-shadow: 20px 20px 60px #cfcfd1, -20px -20px 60px #ffffff;
+    }
+  }
 }
