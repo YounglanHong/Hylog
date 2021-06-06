@@ -2,7 +2,7 @@
 title: DFS/ BFS 이해하기
 slug: dfs-bfs
 date: "2021-06-02"
-description: Introducing Graph search algorithm DFS, BFS.
+description: Graph search algorithm DFS and BFS.
 ---
 
 🔑 대표적 그래프(Graph) 탐색 알고리즘인 DFS/BFS를 소개합니다.
@@ -58,62 +58,23 @@ description: Introducing Graph search algorithm DFS, BFS.
   - DFS 구현 예시
 
     ```js
-    class Graph {
-      constructor() {
-        this.adjacencyList = {};
-      }
-      // 정점(노드) 추가
-      addVertex(vertex) {
-        if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
-        return this.adjacencyList;
-      }
-      // 간선 추가
-      addEdge(vertex1, vertex2) {
-        this.adjacencyList[vertex1].push(vertex2);
-        this.adjacencyList[vertex2].push(vertex1);
-        return this.adjacencyList;
-      }
+    const result = []; // 결과 배열
+    const visited = {}; // 방문한 노드 체크
 
-      // 탐색 시작 노드 인자
-      DFS(start) {
-        const result = []; // 탐색 결과 배열
-        const visited = {}; // 방문한 노드 체크(각 노드를 한 번씩만 처리하도록)
-        const adjacencyList = this.adjacencyList;
-
-        function dfs(vertex) {
-          // 정점이 빈 값이면 null을 반환
-          if (!vertex) return null;
-          // 시작 노드를 스택에 push하고 방문 처리
-          visited[vertex] = true;
-          // 탐색 결과 배열에 노드 push
-          result.push(vertex);
-          // 인접 리스트를 순회하면서 현재 노드와 연결된 다른 노드 방문 처리
-          adjacencyList[vertex].forEach((v) => {
-            // 방문하지 않은 인접 노드 방문 처리(재귀)
-            if (!visited[v]) dfs(v);
-          });
-        }
-        dfs(start);
-        return result;
-      }
+    const = dfs => (graph, node) {
+      // 정점이 빈 값이면 null을 반환
+      if (!node) return null;
+      // 현재 노드를 방문 처리
+      visited[node] = true;
+      // 결과 배열에 노드 추가
+      result.push(node);
+      // 현재 노드의 인접 노드 방문 처리(재귀)
+      graph[node].forEach((v) => {
+        if (!visited[v]) dfs(v);
+      });
     }
-    const graph = new Graph();
-    graph.addVertex("A");
-    graph.addVertex("B");
-    graph.addVertex("C");
-    graph.addVertex("D");
-    graph.addVertex("E");
-    graph.addVertex("F");
-
-    graph.addEdge("A", "B");
-    graph.addEdge("A", "C");
-    graph.addEdge("B", "D");
-    graph.addEdge("C", "E");
-    graph.addEdge("D", "E");
-    graph.addEdge("D", "F");
-    graph.addEdge("E", "F");
-
-    graph.DFS("A"); //  ["A", "B", "D", "E", "C", "F"]
+    dfs(start);
+    return result;
     ```
 
 ---
@@ -141,64 +102,28 @@ description: Introducing Graph search algorithm DFS, BFS.
   - BFS 구현 예시
 
     ```js
-    class Graph {
-      constructor() {
-        this.adjacencyList = {};
-      }
-      // 정점(노드) 추가
-      addVertex(vertex) {
-        if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
-        return this.adjacencyList;
-      }
-      // 간선 추가
-      addEdge(vertex1, vertex2) {
-        this.adjacencyList[vertex1].push(vertex2);
-        this.adjacencyList[vertex2].push(vertex1);
-        return this.adjacencyList;
-      }
-
-      BFS(start) {
-        const result = [];
-        const visited = {};
-        let vertex; // 현재 노드
-        const adjacencyList = this.adjacencyList;
-        // 탐색 시작 노드를 큐에 넣고, 방문 처리
-        const queue = [start];
-        visited[start] = true;
-        // 큐가 비어있을 때까지 반복
-        while (queue.length) {
-          // console.log(queue);
-          vertex = queue.shift(); //
-          result.push(vertex);
-          // 인접 리스트를 순회하여 방문하지 않은 인접 노드
-          // 큐에 push하고, 방문 처리
-          adjacencyList[vertex].forEach((v) => {
-            if (!visited[v]) {
-              queue.push(v);
-              visited[v] = true;
-            }
-          });
+    const bfs = (graph, start) => {
+      const queue = [start],
+        visited = {},
+        result = [];
+      let node; // 탐색할 현재 노드
+      // 현재 노드를 방문 처리
+      visited[start] = true;
+      // 큐가 비어있을 때까지 반복
+      while (queue.length) {
+        node = queue.shift();
+        result.push(node);
+        // 현재 노드의 방문 안 한 인접 노드 큐에 추가
+        for (let v of graph[node]) {
+          if (!visited[v]) {
+            visited[v] = true;
+            queue.push(v);
+          }
         }
-        return result;
       }
-    }
-    const graph = new Graph();
-    graph.addVertex("A");
-    graph.addVertex("B");
-    graph.addVertex("C");
-    graph.addVertex("D");
-    graph.addVertex("E");
-    graph.addVertex("F");
-
-    graph.addEdge("A", "B");
-    graph.addEdge("A", "C");
-    graph.addEdge("B", "D");
-    graph.addEdge("C", "E");
-    graph.addEdge("D", "E");
-    graph.addEdge("D", "F");
-    graph.addEdge("E", "F");
-
-    graph.BFS("A"); //   ["A", "B", "C", "D", "E", "F"]
+      return result;
+    };
+    bfs(start);
     ```
 
 ---
@@ -216,7 +141,7 @@ description: Introducing Graph search algorithm DFS, BFS.
   | 무한루프 | ⭕️        | ❌       |
   | 특징     | 백트래킹   | 최적화   | -->
 
-<blockquote>
+<blockquote className="summary">
 <h2>💡정리</h2>
 
 - **DFS**는 그래프의 **깊이**를 우선으로 탐색하고, **스택**과 **재귀**를 통해 구현할 수 있습니다.(백트래킹)
@@ -225,8 +150,6 @@ description: Introducing Graph search algorithm DFS, BFS.
 - **BFS**는 탐색해야 할 그래프의 깊이가 노드마다 다르거나 단일 대답이 필요한 경우((예)최단 경로 구하기 등)에 유리합니다.
 - 그래프의 모든 노드를 탐색해야 한다면 **DFS**가 더 좋은 방법일 수 있습니다.
 </blockquote>
-
----
 
 ### 🔗Reference
 
