@@ -2,7 +2,7 @@
 title: typeof [] === "object"?
 slug: why-typeof-array-is-object
 date: "2021-06-07"
-description: 밀집 배열과 희소 배열
+description: Dense array and Sparse array
 ---
 
 ## typeof [] === "object"?
