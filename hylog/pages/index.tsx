@@ -13,6 +13,8 @@ interface Post {
 }
 
 const Home = ({ posts }) => {
+  posts.sort((a: Post, b: Post) => +new Date(b.date) - +new Date(a.date));
+
   return (
     <div className="container">
       <Head>
@@ -38,6 +40,7 @@ const Home = ({ posts }) => {
           새롭게 배운 내용을 계속해서 추가합니다
         </p>
       </header>
+      <nav></nav>
       <main>
         {posts.map((post: Post, idx: number) => {
           return (
