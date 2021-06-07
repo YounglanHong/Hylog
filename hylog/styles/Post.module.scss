@@ -24,6 +24,7 @@
   }
 
   .date {
+    margin: 0.2rem 0;
     color: #{$gray-500};
   }
 
@@ -69,7 +70,7 @@
     }
 
     pre {
-      width: 90%;
+      // width: 90%;
       border-radius: 0.3em;
       font-size: #{$font-sm};
     }
