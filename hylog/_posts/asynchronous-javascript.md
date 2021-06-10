@@ -122,18 +122,69 @@ description: callback, promise, async/await
   };
   ```
 
-- `then`은 프로미스가 **이행**(fulfilled) 상태 일 때 , `catch`는 프로미스가 **거부**(rejected) 상태 일 때 사용되는 메서드입니다. `then`, `catch` 를 통해서 비동기 처리 결과를 성공과 실패로 나누어 작업할 수 있습니다.
+- `then`은 프로미스가 **이행**(fulfilled) 상태 일 때 , `catch`는 프로미스가 **거부**(rejected) 상태 일 때 사용되는 메서드입니다. `then`, `catch` 를 통해서 비동기 처리 결과를 응답과 에러로 나누어 작업할 수 있습니다.
+
+  > 💡 `then`의 두번째 콜백 함수로 에러 처리하는 방법도 있지만 이는 첫번째 콜백 함수에서 발생한 오류를 캐치하지 못하고 코드가 복잡해져서 좋지 않습니다.
+  > 프로미스의 에러 처리는 **\*`catch`** 에서 하는 것이 권장됩니다.
 
   ```js
   fetchData(1)
     .then(user => {
-      // 성공
+      // 응답
       console.log("유저 아이디는 ", user.id);
     })
     .catch(err => {
-      // 실패
+      // 에러
       console.error(err);
     }
+  ```
+
+- 프로미스는 `then`, `catch` 메서드의 리턴 값도 *프로미스*이기 때문에 연결해서 사용할 수 있습니다. 이를 **프로미스 체이닝**(Promise chaining)이라고 합니다.
+
+    <figure>
+      <img src="https://mdn.mozillademos.org/files/8633/promises.png" alt="promise chaining" width="600" height="250" />
+      <figcaption>Promise chaining</figcaption>
+    </figure>
+
+  ```js
+  fetchData(1)
+  // 응답
+  // fetch 함수의 결과로 얻은 user id로 서버에 GET 요청 보낸다
+  .then(({id}) => getUserData("FETCH_URL"))
+  .then(userData => console.log(userData))
+  .catch(err => {
+    // 에러
+    console.error(err);
+  }
+  ```
+
+## **Async/ Await**
+
+- `async/ await`은 비동기 처리를 동기처럼 동작하도록 구현할 수 있는 새로운 비동기 처리 방식입니다. `async/ await`도 프로미스 기반이지만 프로미스와 달리 `then`, `catch` 등의 메서드에 콜백 함수를 전달해 비동기 결과를 처리하지 않아도 간결하고 직관적으로 표현할 수 있습니다.
+
+  ```js
+  //...
+  const fetchUser = async (userId) => {
+    const userInfo = await fetchData(userId);
+    console.log("유저 정보: ", userInfo);
+  };
+  fetchUser(1);
+  ```
+
+- 또한 비동기적 에러(`await`)와 동기적 에러(`JSON.parse`) 처리를 `try-catch` 구문 안에서 함께 할 수 있습니다.
+
+  ```js
+  //...
+  const fetchUser = async (userId) => {
+    try {
+      const userInfo = await fetchData(userId);
+      const parsedInfo = JSON.parse(userInfo);
+      console.log("유저 정보: ", userInfo);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  fetchUser(1);
   ```
 
 ### 🔗 Reference
@@ -143,3 +194,7 @@ description: callback, promise, async/await
 [Introducing asynchronous JavaScript - Web 개발 학습하기 | MDN](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Introducing)
 
 [자바스크립트 비동기 처리와 콜백 함수](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
+
+```
+
+```
