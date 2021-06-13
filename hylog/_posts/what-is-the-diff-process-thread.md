@@ -10,7 +10,7 @@ description: Program, Process and Thread
 <figcaption>JavaScript is single-threaded (MDN)</figcaption>
 </figure>
 
-🔑 자바스크립트를 공부하다 보면 **싱글 스레드** 라는 개념이 나옵니다.
+🔑 자바스크립트를 공부하다 보면 **싱글 스레드** 라는 개념이 나옵니다. 스레드가 하나라는 의미인 것 같은데 그럼 스레드는 뭘까요?
 스레드(thread)를 이해하기 위해서는 프로그램(program)과 프로세스(process)의 개념부터 이해해야 합니다. 각각에 대해 차근차근 알아봅니다.
 
 ---
@@ -41,6 +41,7 @@ mac OS, 윈도우 같은 운영체제는 프로그램을 실행하기 위해 메
 
 <figure align="center">
 <img src="https://www.backblaze.com/blog/wp-content/uploads/2017/08/diagram-thread-codestack.png" alt="process" width="650" height="350" />
+<figcaption>Process</figcaption>
 </figure>
 
 ### 프로세스의 독립성
