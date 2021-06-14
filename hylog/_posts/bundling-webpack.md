@@ -1,8 +1,8 @@
 ---
-title: 번들링과 모듈 번들러
+title: 번들링과 모듈 번들러 그리고 웹팩
 slug: bundling-webpack
 date: "2021-06-14"
-description: Bundling and Module bundler
+description: Bundling, Module bundler and Webpack
 ---
 
 ## 번들링(Bundling)과 모듈(Module)
@@ -40,9 +40,101 @@ console.log(user); // ERROR
 
 **모듈 번들러**는 여러 자바스크립트 파일을 하나의 큰 파일로 결합하는 번들링을 합니다. 번들러는 모든 것을 결합하는 방법을 추적하는 종속성(dependency) 그래프를 만듭니다. 웹팩에 `entry point`를 명시하면 `import`과 `dependency`를 가지고 모든 것을 하나의 자바스크립트 파일로 결합합니다.
 
+```js
+// Add dependencies(package.json)
+npm init -y
+
+// Install Lodash
+npm install lodash
+
+// Install webpack
+npm install --save-dev webpack webpack-cli
+
+// package.json
+"scripts": {
+  "build": "webpack",
+  "dev": "webpack serve"
+}
+// Build and Compile index.js to dist/main.js
+npm run build
+```
+
+```js
+// src/index.js
+import { camelCase } from "lodash";
+
+console.log(camelCase("hello world"));
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <!-- <script src="../src/index.js"></script> -->
+    <script src="../dist/main.js"></script>
+  </body>
+</html>
+```
+
+### 웹팩(Webpack)
+
 모듈 번들러의 종류로는 webpack, [roll up](https://rollupjs.org/guide/en/), [parcel](https://ko.parceljs.org/), [snowpack](https://www.snowpack.dev/guides/optimize-and-bundle)이 있지만 그 중 가장 많이 사용되는 것은 [**webpack**](https://webpack.js.org/)입니다.
 
----
+<figure>
+<img src="../images/webpack_module-bundler.png" alt="webpack" width="700" height="300" />
+<figcaption>Webpack</figcaption>
+</figure>
+
+### 웹팩 구성파일
+
+```js
+// Customize behavior of webpack
+// webpack.config.js
+
+const path = require("path"); // Consistent path name
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
+module.exports = {
+  // Entry Points
+  entry: "src/index.js", // Entry point
+  entry: {
+    foo: "foo.js", // Entry object(code splitting)
+    bar: "bar.js",
+  },
+
+  // Output
+  output: {
+    filename: "main.js", // Filename to compile
+    path: path.resolve(__dirname, "dist"), // File location
+  },
+
+  // Loaders
+  module: {
+    // Match files to loaders(css, style, sass-loader)
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
+  },
+
+  // Plugins
+  // webpack-bundle-analyzer
+  plugins: [new BundleAnalyzerPlugin()],
+
+  // Dev Server(watch and serve files)
+  // webpack-dev-server
+  devServer: {
+    contentBase: path.join(__dirname, "public"),
+    port: 9000,
+  },
+};
+```
 
 ### 🔗 Reference
 
