@@ -1,5 +1,5 @@
 ---
-title: 웹 캐시
+title: 웹 캐시 정리하기
 slug: web-cache
 date: "2021-06-19"
 description: cache and web cache
