@@ -16,15 +16,15 @@ tag: [Algorithm]
 - 두 정점(노드)가 간선으로 연결되면 '두 노드는 인접(Adjacent)하다' 라고 합니다.
 
 <figure align="center">
-<img src="https://github.com/YounglanHong/Hylog/blob/master/hylog/public/Graph.png?raw=true" alt="graph" width="300" height="200" />
+<img src="../images/Graph.png" alt="graph" width="500" height="300" />
 <figcaption className="cap">graph</figcaption>
 </figure>
 
 - 페이스북, 인스타그램 같은 소셜 네트워크의 데이터베이스가 그래프 구조로 만들어져 있습니다. 그래프 구조를 통해 **사람들(`node`) 사이의 관계(`edge`)** 를 쉽게 탐색할 수 있습니다.
 
 <figure align="center">
-<img src="https://d1.awsstatic.com/diagrams/foaf-graph.e5e42865e0ee97a2972f9014d28f525ef68a981b.png" alt="graph example" width="300" height="230" />
-<figcaption className="cap">social network (AWS)
+<img src="https://d1.awsstatic.com/diagrams/foaf-graph.e5e42865e0ee97a2972f9014d28f525ef68a981b.png" alt="graph example" width="400" height="300" />
+<figcaption className="cap">social network (<a href="https://aws.amazon.com/ko/nosql/graph/">AWS</a>)
 </figcaption>
 </figure>
 
@@ -41,14 +41,14 @@ tag: [Algorithm]
   - 시작 노드에서 최대한 **멀리 있는 노드** 를 우선 탐색합니다.
 
 <figure align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" alt="depth-first search" width="250" height="250" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" alt="depth-first search" width="300" height="300" />
 <figcaption className="cap">depth-first search (wikipedia)</figcaption>
 </figure>
 
 - DFS를 활용하여 **미로찾기** 문제를 해결할 수 있습니다. 미로 속의 길을 간선(`edge`)으로, 막다른 지점을 정점(`node`)으로 보고 미로의 도착점에 도달할 때까지 각 경로의 최대 깊이까지 탐색합니다. 현재 선택한 경로가 막다른 골목에 부딪히면 되돌아가서(백트래킹) 다른 경로를 탐색합니다.
 
 <figure align="center">
-<img src="https://d18l82el6cdm1i.cloudfront.net/uploads/mf7THWHAbL-mazegif.gif" alt="dfs example maze" width="320" height="220" />
+<img src="https://d18l82el6cdm1i.cloudfront.net/uploads/mf7THWHAbL-mazegif.gif" alt="dfs example maze" width="500" height="300" />
 <figcaption className="cap">depth-first search (wikipedia)</figcaption>
 </figure>
 
@@ -87,14 +87,14 @@ tag: [Algorithm]
   - 시작 노드에서 최대한 **가까운 노드(이웃 노드)** 부터 우선 탐색합니다.
 
 <figure align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif" alt="breadth-first search" width="250" height="250" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif" alt="breadth-first search" width="300" height="300" />
 <figcaption className="cap">breadth-first search (wikipedia)</figcaption>
 </figure>
 
 - BFS는 **P2P 파일 네트워크**에서 피어(peer) 노드를 탐색할 때 활용할 수 있습니다. BFS를 활용해 가장 가까운 이웃 노드만 빠르게 탐색할 수 있습니다.
 
 <figure align="center">
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/TCP_new.png" alt="bfs example p2p" width="320" height="220" />
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/TCP_new.png" alt="bfs example p2p" width="450" height="350" />
 <figcaption className="cap">depth-first search (wikipedia)</figcaption>
 </figure>
 
