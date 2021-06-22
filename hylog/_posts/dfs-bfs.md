@@ -3,6 +3,7 @@ title: DFS/ BFS 이해하기
 slug: dfs-bfs
 date: "2021-06-02"
 description: Graph search algorithm DFS and BFS.
+tag: [Algorithm]
 ---
 
 🔑 대표적 그래프(Graph) 탐색 알고리즘인 DFS/BFS를 소개합니다.

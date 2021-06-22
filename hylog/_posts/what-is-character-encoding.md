@@ -3,6 +3,7 @@ title: 문자열 인코딩에 대해 알아보기
 slug: what-is-character-encoding
 date: "2021-06-05"
 description: ASCII, EUC-KR and Unicode
+tag: [CS]
 ---
 
 🔑 문자열 인코딩은 컴퓨터가 문자를 **2진수**로 표현하는 방식입니다.

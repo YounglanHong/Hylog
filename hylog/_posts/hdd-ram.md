@@ -3,6 +3,7 @@ title: 하드디스크와 메모리(RAM) 비교
 slug: hdd-ram
 date: "2021-06-04"
 description: Hard disk and Memory(RAM)
+tag: [CS]
 ---
 
 ### `저장장치(Storage)`는 데이터를 일시적 또는 긴 기간 저장하기 위해 사용하는 장치

@@ -6,7 +6,6 @@ import { useEffect } from "react";
 const prism = require("prismjs");
 
 const Post = ({ post }) => {
-  // console.log(post);
   useEffect(() => {
     prism.highlightAll();
   }, []);
@@ -36,6 +35,7 @@ const Post = ({ post }) => {
             {post.date}
           </time>
         </p>
+        <span className={styles.tag}>{post.tag}</span>
         <section dangerouslySetInnerHTML={{ __html: post.content }}></section>
       </div>
     </div>

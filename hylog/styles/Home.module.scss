@@ -70,6 +70,18 @@
     color: #{$gray-500};
   }
 
+  .tag {
+    padding: 0.15rem;
+    border: 1px solid #{$gray-500};
+    border-radius: 0.2rem;
+    color: #{$gray-500};
+
+    &:hover {
+      color: #{$gray-700};
+      cursor: pointer;
+    }
+  }
+
   .desc {
     font-size: #{$font-md};
   }

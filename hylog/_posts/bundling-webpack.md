@@ -3,6 +3,7 @@ title: 번들링과 모듈 번들러 그리고 웹팩
 slug: bundling-webpack
 date: "2021-06-14"
 description: Bundling, Module bundler and Webpack
+tag: [FrontEnd]
 ---
 
 ## 번들링(Bundling)과 모듈(Module)

@@ -10,6 +10,7 @@ interface Post {
   slug: string;
   date: string;
   description: string;
+  tag: Array<string>;
 }
 
 const Home = ({ posts }) => {
@@ -53,6 +54,7 @@ const Home = ({ posts }) => {
                   {post.date}
                 </time>
               </p>
+              <span className={styles.tag}>{post.tag[0]}</span>
               <p className={styles.desc}>{post.description}</p>
             </article>
           );

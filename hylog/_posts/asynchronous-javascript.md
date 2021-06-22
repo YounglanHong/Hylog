@@ -3,6 +3,7 @@ title: 자바스크립트의 비동기 처리 방식
 slug: asynchronous-javascript
 date: "2021-06-10"
 description: callback, promise, async/await
+tag: [Javascript]
 ---
 
 # 비동기 처리란?
