@@ -3,6 +3,7 @@ title: 프록시 서버가 무엇일까?
 slug: what-is-proxy
 date: "2021-06-18"
 description: Proxy server, Forward and Reverse proxy
+tag: [Network]
 ---
 
 ## Proxy

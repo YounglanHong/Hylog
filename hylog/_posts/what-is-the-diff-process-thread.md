@@ -3,6 +3,7 @@ title: 프로세스와 스레드 비교
 slug: what-is-the-diff-process-thread
 date: "2021-06-13"
 description: Program, Process and Thread
+tag: [CS]
 ---
 
 <figure align="center">

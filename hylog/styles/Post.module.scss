@@ -28,6 +28,12 @@
     color: #{$gray-500};
   }
 
+  .tag {
+    padding: 0.15rem;
+    border: 1px solid #{$gray-600};
+    border-radius: 0.2rem;
+  }
+
   section {
     margin: 3rem 0;
     font-family: "Spoqa Han Sans Neo", "sans-serif";

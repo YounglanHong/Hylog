@@ -3,6 +3,7 @@ title: typeof [] === "object"?
 slug: why-typeof-array-is-object
 date: "2021-06-07"
 description: Dense array and Sparse array
+tag: [Javascript]
 ---
 
 ## typeof [] === "object"?
