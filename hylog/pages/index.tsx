@@ -10,6 +10,7 @@ interface Post {
   slug: string;
   date: string;
   description: string;
+  tag: Array<string>;
 }
 
 const Home = ({ posts }) => {
