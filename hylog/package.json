@@ -27,7 +27,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "gray-matter": "^4.0.3",
     "prettier": "^2.3.0",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "remark-html": "^13.0.1",
     "remark-parse": "^9.0.0",
     "typescript": "^4.2.4",
