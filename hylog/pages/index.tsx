@@ -54,7 +54,10 @@ const Home = ({ posts }) => {
                   {post.date}
                 </time>
               </p>
-              <span className={styles.tag}>{post.tag[0]}</span>
+              {post.tag &&
+                post.tag.map((tag) => (
+                  <span className={styles.tag}>{tag}</span>
+                ))}
               <p className={styles.desc}>{post.description}</p>
             </article>
           );
