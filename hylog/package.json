@@ -9,7 +9,7 @@
     "vercel-deploy": "next build && next export"
   },
   "dependencies": {
-    "next": "^10.2.3",
+    "next": ">=11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.32.13"
