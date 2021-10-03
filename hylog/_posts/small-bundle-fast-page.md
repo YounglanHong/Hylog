@@ -1,5 +1,5 @@
 ---
-title: [번역] 작은 번들, 빠른 페이지 - 과도한 자바스크립트 다루는 법
+title: "[번역] 작은 번들, 빠른 페이지"
 slug: small-bundle-fast-page
 date: "2021-10-04"
 description: Minimising the amount of javascript and bundle size
@@ -7,8 +7,6 @@ tag: [Javascript]
 ---
 
 > Ben Schwarz가 작성한 [Small Bundles, Fast Pages: What To Do With Too Much JavaScript](https://calibreapp.com/blog/bundle-size-optimization?utm_campaign=Mastering%20JS%20Weekly&utm_medium=email&utm_source=Revue%20newsletter)를 번역한 글입니다.
-
----
 
 빠른 사용자 경험(UX)을 위해서는 웹 페이지에서 불러오는 자바스크립트의 양을 최소화하는 것이 핵심입니다. 이 게시글에서는 번들 크기가 중요한 이유에 대해 설명하고 JS 번들을 모니터링, 시각화 및 최소화하기 위해 필요한 도구와 방법을 추천합니다.
 
