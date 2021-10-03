@@ -16,7 +16,7 @@
 
 .article {
   margin: 7vh 0;
-  width: calc(100% - 30%);
+  width: calc(100% - 25%);
 
   .title {
     font-size: #{$font-post-title};
@@ -68,15 +68,16 @@
       font-size: #{$font-sm};
       color: #{$gray-500};
     }
+
     blockquote {
+      margin: 0;
       padding: 1em 3em;
-      border-radius: 1.3em;
+      border-radius: 0.3em;
       background: #f3f4f6;
-      box-shadow: 20px 20px 60px #cfcfd1, -20px -20px 60px #ffffff;
+      // box-shadow: 20px 20px 60px #cfcfd1, -20px -20px 60px #ffffff;
     }
 
     pre {
-      // width: 90%;
       border-radius: 0.3em;
       font-size: #{$font-sm};
     }
@@ -85,12 +86,12 @@
 
 @include tablet {
   .article {
-    width: calc(100% - 15%);
+    width: calc(100% - 20%);
   }
 }
 
 @include mobile {
   .article {
-    width: calc(100% - 7%);
+    width: calc(100% - 15%);
   }
 }
