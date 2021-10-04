@@ -1,5 +1,8 @@
 # Hylog
 
+* 매일 새롭게 알게된 내용은 [TIL](https://github.com/YounglanHong/TIL)에 기록합니다.
+* 더 자세히 학습한 내용은 [블로깅](https://hylog.vercel.app/)하여 정리합니다.
+
 ## Tech
 
 - React
