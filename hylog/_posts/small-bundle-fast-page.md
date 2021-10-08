@@ -31,11 +31,23 @@ tag: [Javascript]
 
 ## 과도한 자바스크립트는 어느 정도인지
 
-성능(performance)에 대해 이야기할 때, 대개 압축된(compressed) 리소스 크기에 주목한다. 그러나 일단 압축이 해제된 리소스는 2~3배 더 커질 것이다.
+성능(performance)에 대해 이야기할 때, 대개 압축된(compressed) 리소스 크기에 주목한다. 그러나 일단 압축이 해제된 리소스는 2~3배 더 커진다.
 
 예를 들어, 300KB의 압축된 스크립트가 있는 페이지는 압축 해제 시 용량이 900KB ~ 1.3MB가 될 수 있다.
 
+<figure align="center">
+  <a href="https://imgur.com/C6JmnKE"><img src="https://i.imgur.com/C6JmnKE.png" title="source: imgur.com" alt="uncompressed-js" width="700" height="180" /></a>
+  <figcaption className="cap">NPMJS.com의 Commons.js는 압축 시 306KB이지만, 압축 해제 시 1.2MB가 될 수 있다.
+  </figcaption>
+</figure>
+
 CPU가 제한된 장치의 경우 멀티-메가바이트 페이로드는 특히 성능에 불리한 영향을 줄 수 있다.
+
+<figure align="center">
+  <a href="https://imgur.com/O0uzP3t"><img src="https://i.imgur.com/O0uzP3t.png" title="source: imgur.com" alt="cost-of-javascript" width="700" height="400" /></a>
+  <figcaption className="cap">2019년 자바스크립트 비용. Addy Osmani의 허락을 받고 사용
+  </figcaption>
+</figure>
 
 웹 페이지의 스크립트는 압축 시 최대 300KB로 제한하는 것을 권장한다. 가능하면 코드 분할(code splitting)을 통해 코드를 50KB 이하의 작은 덩어리로 분할한다. 그렇게 하면 브라우저는 JS 리소스를 병렬로 다운로드 하여 HTTP 2 멀티플렉싱을 최대한 활용할 수 있다.
 
@@ -47,7 +59,12 @@ CPU가 제한된 장치의 경우 멀티-메가바이트 페이로드는 특히 
 
 [Sublime](https://packagecontrol.io/packages/Import%20Cost) 또는 [VSCode](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) 에디터에서 import cost plugin을 사용하면 서드파티 라이브러리를 불러올 때 해당 라이브러리의 크기를 알려준다.
 
-`import cost` 라이브러리를 사용하면 패키지 크기의 기준값을 설정할 수 있다. 디폴트 값보다 과감한 기준을 세우는 것이 좋다.
+<figure align="center">
+  <a href="https://imgur.com/JcM4kiw"><img src="https://i.imgur.com/JcM4kiw.png" title="source: imgur.com" alt="import-cost-plugin" width="700" height="150" /></a>
+  <figcaption className="cap">import cost plugin</figcaption>
+</figure>
+
+import cost 라이브러리를 사용하면 패키지 크기의 기준값을 설정할 수 있다. 디폴트 값보다 과감한 기준을 세우는 것이 좋다.
 
 ```jsx
 // Upper size limit, in KB, that will count a package as a small package
@@ -57,13 +74,19 @@ CPU가 제한된 장치의 경우 멀티-메가바이트 페이로드는 특히 
 "importCost.mediumPackageSize": 50,
 ```
 
-> `import cost` 라이브러리는 번들 코드 내의 공통 의존성을 가진 두 라이브러리의 비용 절감을 계산할 수는 없다.
+> `import cost` 라이브러리가 번들 코드 내의 공통 의존성을 가진 두 라이브러리의 비용 절감을 계산해주지는 않는다.
 
 ### 번들에 포함된 내용을 시각화
 
 [Bundle Buddy](https://www.bundle-buddy.com/), [source-map-explorer](https://github.com/danvk/source-map-explorer#readme) 및  [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer#readme) 와 같은 도구를 사용하여 인터랙티브한 번들 트리맵을 생성한다.
 
 트리맵에서 블록 크기는 파일 크기와 비례하기 때문에 큰 import를 빠르게 발견할 수 있다.
+
+<figure align="center">
+  <a href="https://imgur.com/jUf0Rzo"><img src="https://i.imgur.com/jUf0Rzo.png" title="source: imgur.com" alt="bundle-analyzer" width="700" height="350" /></a>
+  <figcaption className="cap">이 번들은 SVG 아이콘이 0.js 에 포함됨을 나타낸다.
+  </figcaption>
+</figure>
 
 위와 같은 도구를 사용하여 번들을 시각적으로 탐색하면 예상보다 큰 모듈을 식별할 수 있다.
 
@@ -73,7 +96,19 @@ CPU가 제한된 장치의 경우 멀티-메가바이트 페이로드는 특히 
 
 [BundlePhobia.com](http://bundlephobia.com/) 를 통해 프로젝트의 `package.json` 를 스캔하거나 npm 패키지를 탐색할 수 있다.
 
-"트리 쉐이킹"이 가능한 라이브러리의 경우 webpack, rollup, esbuild와 같은 번들러 도구를 사용하여 빌드 중에 사용하지 않은 코드는 제거할 수 있다. 되도록 트리 쉐이킹이 가능한 라이브러리를 선택하는 것이 좋다.
+<figure align="center">
+  <a href="https://imgur.com/s3faKKZ"><img src="https://i.imgur.com/s3faKKZ.png" title="source: imgur.com" alt="bundlephobia" width="700" height="310" /></a>
+  <figcaption className="cap">Moment.js 는 지난 15번의 배포를 통해 크기가 15% 증가했다.
+  </figcaption>
+</figure>
+
+"트리 쉐이킹"이 가능한 라이브러리의 경우 webpack, rollup, esbuild와 같은 번들러 도구를 사용하여 빌드 중에 사용하지 않은 코드는 제거할 수 있다. 되도록 트리 쉐이킹이 가능한 라이브러리를 선택하는 것이 좋다!
+
+<figure align="center">
+  <a href="https://imgur.com/cRNPMqG"><img src="https://i.imgur.com/cRNPMqG.png" title="source: imgur.com" alt="bundlephobia similar packages" width="700" height="250" /></a>
+  <figcaption className="cap">Bundlephobia 는 moment.js.의 대체재로 luxon, dayjs 또는 date-fns 를 추천한다. 
+  </figcaption>
+</figure>
 
 > 가끔 라이브러리가 이전 브라우저를 지원하지 않기 때문에 크기가 작은 경우가 있다. 엣지 케이스를 면밀히 테스트하는 것이 좋다.
 
@@ -107,7 +142,7 @@ CPU가 제한된 장치의 경우 멀티-메가바이트 페이로드는 특히 
 
 [React](https://reactjs.org/docs/code-splitting.html#reactlazy), [Next](https://nextjs.org/docs/advanced-features/dynamic-import), [Angular](https://angular.io/guide/lazy-loading-ngmodules) 그리고 [Vue](https://router.vuejs.org/guide/advanced/lazy-loading.html) 모두 레이지 로딩 컴포넌트를 간단하게 만들 수 있는 유틸리티를 제공한다. 아래는 React 예시이다:
 
-```jsx
+```js
 import React, { Fragment, Suspense } from "react";
 import Skeleton from "./Skeleton";
 
@@ -138,6 +173,51 @@ function Page() {
 
 ## 주요 콘텐츠는 서버사이드 렌더링을 선호
 
-최종 사용자든 SEO 스파이더든 상관없이 기본 콘텐츠를 최대한 빨리 렌더링해야 한다.
+최종 사용자와 SEO 스파이더(SEO Spider) 구분 없이 우리는 기본 콘텐츠를 최대한 빨리 렌더링해야 한다.
 
-콘텐츠 기반 페이지의 경우, SPA(Single Page Applications, 싱글 페이지 애플리케이션)보다 SSR(Server-side rendering, 서버 사이드 렌더링)을 추천한다. 싱글 페이지 애플리케이션은 세션 시간이 길거나 매끄럽게 전환되면서 콘텐츠를 빨리 보여줘야하는 인터페이스(예: 장바구니)에 적합하다. 이외의 경우 가능하면 서버사이드로 렌더링해라.
+콘텐츠 기반 페이지의 경우, SPA(Single Page Applications, 싱글 페이지 애플리케이션)보다 SSR(Server-side rendering, 서버 사이드 렌더링)을 추천한다. 싱글 페이지 애플리케이션은 세션 시간이 길거나 매끄럽게 전환되면서 콘텐츠를 빨리 보여줘야하는 인터페이스(예: 장바구니)에 적합하다. 그 이외의 경우 가능하면 서버사이드로 렌더링해라.
+
+## 서드파티 리소스를 퍼사드 패턴으로 레이지 로드
+
+비즈니스 요구 사항으로 인해 서드파티 리소스가 사용되는 경우가 종종 있지만, 그렇다고 해서 개발자가 서드파티 성능에 영향을 줄 수 없는 것은 아니다.
+
+Calibre는 우리의 퍼사드 라이브러리인 [react-live-chat-loader](https://github.com/calibreapp/react-live-chat-loader)를 사용하여, Help Scout, Intercom, Facebook Messenger, Drift, Userlike와 Chatwoot의 TTI(상호작용까지의 시간)를 30% 단축했다.
+
+[퍼사드(Facade)](https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%82%AC%EB%93%9C_%ED%8C%A8%ED%84%B4) 라이브러리는 페이지가 중요한 내용의 로딩을 완료할 때까지 일시적으로 '가짜'(비-상호작용적) 채팅 위젯, 비디오 패널 또는 지원 도구를 보여줌으로써 서드파티 리소스의 로드를 지연시킨다.
+
+팀으로서, 당신은 서드파티의 성능을 다루기 위해 몇가지 전략을 사용할 수 있다. 아래는 우리가 선호하는 전략 중 일부이다.
+
+- 퍼사드를 사용하여 필요 시까지 서드파티가 로딩되는 것을 지연시킨다.
+- [dns-prefetch](https://developer.mozilla.org/en-US/docs/Web/Performance/dns-prefetch) 를 서드파티 도메인으로 사용한다. (예: `<link rel="dns-prefetch" href="[https://fonts.googleapis.com/](https://fonts.googleapis.com/)" />`)
+- CDN을 사용하는 것보다 서드파티 라이브러리를 직접 번들링한다.
+- [서드파티 스크립트가 있는 경우와 없는 경우의 페이지 성능을 비교](https://calibreapp.com/features/third-party)해보고 서드파티 툴링에 대해 결정을 내리는 사람들과 결과를 공유한다.
+- 서브파티 계약에서 성능 SLA(서비스 수준 협약)을 요청한다.
+
+## 최신 브라우저에 ES6 모듈 제공
+
+이전 브라우저를 지원하면 성능 이점이 있는 새로운 기술의 사용에 제한적일 수 있다. 그러나 레거시 기술에 대한 지원을 갑자기 중단하는 것은 접근성 부족으로 이어질 수 있어 주의가 필요하다.
+
+빌드로 두 방식으로 나누어본다.
+
+- 브라우저 지원, 폴리필, 바벨 트랜스코딩을 갖춘 **ES5 빌드**
+- async/await, Promise, 화살표 함수, Map과 Set 타입과 레이지 로딩을 위한 동적 import를 지원하는 **ES2015+ 빌드**
+
+```html
+<!-- Deliver ES5 code to non-module supporting browsers -->
+<script nomodule src="legacy-support-bundle.js"></script>
+
+<!-- Deliver ES2015+ code to module capable browsers -->
+<script type="module" src="bundle.js"></script>
+```
+
+> 💡 웹팩을 사용해 ES5와 ES2015+ 빌드를 만드는 가이드는  [Phil Walton](https://twitter.com/philwalton) 이 작성한 [Deploying ES2015+ Code in Production Today](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) 을 참고해라.
+
+### 자바스크립트의 크기를 계속 모니터링
+
+번들 크기를 최적화 하는 것은 한번의 노력으로 끝나지 않는다. 코드 베이스가 성장하고 진화함에 따라 자바스크립트의 크기를 견제할 수 있는 안전장치가 필요하다. 이때 앞서 언급한 몇몇 도구들이 도움이 될 것이다.
+
+또한 [Lighthouse](https://web.dev/use-lighthouse-for-performance-budgets/) 를 사용하여 성능 예산을 설정하고 자체 솔루션을 스크립트로 작성할 수 있다.
+
+---
+
+위의 팁과 전략을 조합하면 사용자와 개발자 경험을 향상시킬 수 있다.
